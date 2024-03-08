@@ -4,11 +4,11 @@ export default function Navbar() {
     return (
         <nav>
             <Link to="/">
-                <h1>Contacts</h1>
+                <h1>Contact.io</h1>
             </Link>
             <ul>
-                <Link to="/login"><li>Login</li></Link>
-                <Link to="/signup"><li>Signup</li></Link>
+                <li><Link to="/login">Login</Link></li>
+                <li><Link to="/signup">Signup</Link></li>
             </ul>
         </nav>
     )
