@@ -4,7 +4,7 @@ export default function Navbar() {
     return (
         <nav>
             <Link to="/">
-                <h1>HOME</h1>
+                <h1>Contacts</h1>
             </Link>
             <ul>
                 <Link to="/login"><li>Login</li></Link>
