@@ -1,12 +1,15 @@
 import Todos from '../Components/Todos'
 
 export default function Home() {
-    const demoTodos =   [{title: "exercise", time: "asdasd", date: "assdasd"},
-                        {title: "asdasd", time: "dbrgsd", date: "gvasrf"},
-                        {title: "dfgdfg", time: "bgdsrg", date: "barg"},
-                        {title: "ntrn", time: "dnhf", date: "basefv"},
-                        {title: "exercimdrtnse", time: "vgarfg", date: "ver"}]
-    
+    const time = new Date().getHours() + ":" + new Date().getMinutes()
+    const date = new Date().getMonth() + " - " + new Date().getDay() + " - " + new Date().getFullYear()
+
+    const demoTodos =   [{title: "eat", time, date},
+                        {title: "dance", time, date},
+                        {title: "climb", time, date},
+                        {title: "shower", time, date},
+                        {title: "sleep", time, date}]
+
     return (
         <div className="home">
             <Todos todos={demoTodos}/>

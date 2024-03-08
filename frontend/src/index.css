@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     margin: 0;
@@ -11,7 +12,7 @@ a {
 /*NAVBAR*/
 nav {
     position: fixed;
-    width: 100vw;
+    width: 100%;
     background-color: #88AB8E;
     height: 130px;
     display: flex;
@@ -194,9 +195,65 @@ nav ul a li:hover {
 
 /* TODOS */
 .todos {
-    background-color: aqua;
     flex-grow: 1;
+    background-color: #1e554f;
+    padding: 10px;
+    font-family: "Poppins", sans-serif;
 }
 .todos .todo {
     display: flex;
+    background-color: #F2F1EB;
+    margin-bottom: 15px;
+    height: 120px;
+    border-radius: 5px;
+}
+.todos .todo div {
+    margin: 5px 0 5px 5px;
+}
+.todos .todo div:first-child {
+    width: 300px;
+    margin-right: 20px;
+    flex-grow: 1;
+}
+.todos .todo div:nth-child(2) {
+    width: 120px;
+}
+.todos .todo div:nth-child(3) {
+    width: 100px;
+}
+.todos .todo div:nth-child(4) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0;
+    width: 40px;
+}
+.todos .todo div i {
+    font-size: 30px;
+    color: rgb(26, 26, 181);
+}
+.todos .todo div i:first-child {
+    color: rgb(218, 56, 56);
+}
+.todos .todo div h1 {
+    font-size: 20px;
+    color: hsl(120, 70%, 44%);
+}
+.todos .todo div h3 {
+    font-size: 14px;
+}
+.todos .todo div:first-child h3 {
+    background-color: #c6cec7;
+    flex-grow: 1;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+.todos .todo div:first-child {
+    display: flex;
+    flex-direction: column;
+}
+.todos h2 {
+    font-size: 40px;
+    margin-block: 20px;
+    color: #F2F1EB;
 }
