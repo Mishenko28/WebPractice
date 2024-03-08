@@ -9,6 +9,7 @@ export default function App() {
   return (
     <>
       <Navbar />
+      <div className="navbar-block"></div>
       <Routes>
         <Route
           path="/"

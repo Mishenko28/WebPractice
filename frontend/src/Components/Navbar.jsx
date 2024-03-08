@@ -4,11 +4,11 @@ export default function Navbar() {
     return (
         <nav>
             <Link to="/">
-                <h1>Contact.io</h1>
+                <h1>JTWebsite.dev</h1>
             </Link>
             <ul>
-                <li><Link to="/login">Login</Link></li>
-                <li><Link to="/signup">Signup</Link></li>
+                <Link to="/signup"><li>Signup</li></Link>
+                <Link to="/login"><li>Login</li></Link>
             </ul>
         </nav>
     )

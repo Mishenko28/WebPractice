@@ -10,6 +10,8 @@ a {
 
 /*NAVBAR*/
 nav {
+    position: fixed;
+    width: 100vw;
     background-color: #88AB8E;
     height: 130px;
     display: flex;
@@ -21,11 +23,180 @@ nav h1 {
     font-size: 80px;
     margin-left: 15px;
 }
-nav ul li {
-    list-style: none;
-    font-size: 28px;
+nav h1:hover {
+    text-shadow: 0 0 5px #000;
 }
 nav ul {
+    position: absolute;
+    right: 50px;
     display: flex;
+    gap: 40px;
+}
+nav ul li {
+    list-style: none;
+    width: 120px;
+    height: 45px;
+    border-radius: 25px;
+    border: 3px solid #F2F1EB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+nav ul a li {
+    color: #F2F1EB;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+nav ul a:last-child li {
+    background-color: #254154;
+}
+nav ul a li:hover {
+    background-color: #3c9271;
+}
+.navbar-block {
+    height: 130px;
+    background-color: #3c9271;
+}
 
+/* SIGNUP */
+.signup {
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.signup form {
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    width: 350px;
+    color: #3c9271;
+}
+.signup form input {
+    border: 2px solid #3c9271;
+    height: 45px;
+    border-radius: 25px;
+    font-size: 20px;
+    padding-inline: 10px;
+}
+.signup form label {
+    margin: 30px 0 10px 0;
+    font-weight: 800;
+}
+.signup form button {
+    margin-top: 20px;
+    height: 50px;
+    width: 120px;
+    border-radius: 25px;
+    background-color: #3c9271;
+    align-self: end;
+    cursor: pointer;
+    border: 0;
+    font-size: 20px;
+    color: #F2F1EB;
+}
+.signup form button:hover {
+    color: #3c9271;
+    background-color: #F2F1EB;
+    border: 2px solid #3c9271;
+}
+
+/* LOGIN */
+.login {
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login form {
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    width: 350px;
+    color: #3c9271;
+}
+.login form input {
+    border: 2px solid #3c9271;
+    height: 45px;
+    border-radius: 25px;
+    font-size: 20px;
+    padding-inline: 10px;
+}
+.login form label {
+    margin: 30px 0 10px 0;
+    font-weight: 800;
+}
+.login form button {
+    margin-top: 20px;
+    height: 50px;
+    width: 120px;
+    border-radius: 25px;
+    background-color: #3c9271;
+    align-self: end;
+    cursor: pointer;
+    border: 0;
+    font-size: 20px;
+    color: #F2F1EB;
+}
+.login form button:hover {
+    color: #3c9271;
+    background-color: #F2F1EB;
+    border: 2px solid #3c9271;
+}
+
+/* HOME */
+.home {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+.home .create-todo {
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    width: 350px;
+    color: #3c9271;
+}
+.home .create-todo input {
+    border: 2px solid #3c9271;
+    height: 45px;
+    border-radius: 25px;
+    font-size: 20px;
+    padding-inline: 10px;
+}
+.home .create-todo label {
+    margin: 30px 0 10px 0;
+    font-weight: 800;
+}
+.home .create-todo button {
+    margin-top: 20px;
+    height: 50px;
+    width: 120px;
+    border-radius: 25px;
+    background-color: #3c9271;
+    align-self: end;
+    cursor: pointer;
+    border: 0;
+    font-size: 20px;
+    color: #F2F1EB;
+}
+.home .create-todo button:hover {
+    color: #3c9271;
+    background-color: #F2F1EB;
+    border: 2px solid #3c9271;
+}
+
+/* TODOS */
+.todos {
+    background-color: aqua;
+    flex-grow: 1;
+}
+.todos .todo {
+    display: flex;
 }
