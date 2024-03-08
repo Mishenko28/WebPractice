@@ -231,6 +231,7 @@ nav ul a li:hover {
 .todos .todo div i {
     font-size: 30px;
     color: rgb(26, 26, 181);
+    cursor: pointer;
 }
 .todos .todo div i:first-child {
     color: rgb(218, 56, 56);

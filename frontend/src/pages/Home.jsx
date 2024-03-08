@@ -9,7 +9,7 @@ export default function Home() {
                         {title: "climb", time, date},
                         {title: "shower", time, date},
                         {title: "sleep", time, date}]
-
+    
     return (
         <div className="home">
             <Todos todos={demoTodos}/>
