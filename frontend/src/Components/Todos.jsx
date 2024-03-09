@@ -1,9 +1,9 @@
-export default function Todos(props) {
+export default function Todos({ setDeleteConTog, todos }) {
 
     return (
         <div className="todos">
             <h2>Todo-List:</h2>
-            {props.todos.map((todo) => (
+            {todos.map((todo) => (
                 <div key={todo.title} className="todo">
                     <div>
                         <h1>Title:</h1>
@@ -18,7 +18,7 @@ export default function Todos(props) {
                         <h3>{todo.time}</h3>
                     </div>
                     <div>
-                        <i className="fa-solid fa-trash"></i>
+                        <i className="fa-solid fa-trash" onClick={() => setDeleteConTog(true)}></i>
                         <i className="fa-solid fa-pen-to-square"></i>
                     </div>
                 </div>

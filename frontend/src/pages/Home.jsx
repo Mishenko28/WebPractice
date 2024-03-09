@@ -1,18 +1,15 @@
 import Todos from '../Components/Todos'
+import { useTodoListContext } from '../hooks/useTodoListContext'
+import DeleteCon from '../Components/DeleteCon'
+import { useState } from 'react'
 
 export default function Home() {
-    const time = new Date().getHours() + ":" + new Date().getMinutes()
-    const date = new Date().getMonth() + " - " + new Date().getDay() + " - " + new Date().getFullYear()
-
-    const demoTodos =   [{title: "eat", time, date},
-                        {title: "dance", time, date},
-                        {title: "climb", time, date},
-                        {title: "shower", time, date},
-                        {title: "sleep", time, date}]
+    const [deleteConTog, setDeleteConTog] = useState(false)
+    const { state } = useTodoListContext()
     
     return (
         <div className="home">
-            <Todos todos={demoTodos}/>
+            <Todos setDeleteConTog={setDeleteConTog} todos={state.todoList}/>
             <form className="create-todo">
                 <h1>Create Todo</h1>
                 <label>Title:</label>
@@ -23,6 +20,7 @@ export default function Home() {
                 <input type="date" />
                 <button>Create</button>
             </form>
+            {deleteConTog && <DeleteCon setDeleteConTog={setDeleteConTog}/>}
         </div>
     )
 }

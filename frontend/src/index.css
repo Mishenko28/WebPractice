@@ -258,3 +258,47 @@ nav ul a li:hover {
     margin-block: 20px;
     color: #F2F1EB;
 }
+
+/* DELETE CONFIRMATION COMPONENT */
+.delete-confirmation-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.delete-confirmation {
+    background-color: #ffffff;
+    width: 480px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.delete-confirmation h1 {
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+}
+.delete-confirmation .btns {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+}
+.delete-confirmation .btns button {
+    width: 100px;
+    height: 50px;
+    color: #fff;
+    font-weight: 700;
+    border: 0;
+    background-color: #46a91c;
+    cursor: pointer;
+}
+.delete-confirmation .btns button:first-child {
+    background-color: #ff0000;
+}
