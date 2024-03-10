@@ -4,7 +4,7 @@ export default function Navbar() {
     return (
         <nav>
             <Link to="/">
-                <h1>JTWebsite.dev</h1>
+                <h1>JTWebsite</h1>
             </Link>
             <ul>
                 <Link to="/signup"><li>Signup</li></Link>

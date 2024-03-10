@@ -8,6 +8,9 @@
 a {
     text-decoration: none;
 }
+.errorField {
+    background-color: rgba(255, 0, 0, 0.2);
+}
 
 /*NAVBAR*/
 nav {
@@ -192,6 +195,12 @@ nav ul a li:hover {
     background-color: #F2F1EB;
     border: 2px solid #3c9271;
 }
+.home .create-todo .error {
+    color: #ff0000;
+    border: 2px solid #ff0000;
+    margin-top: 20px;
+    padding: 10px;
+}
 
 /* TODOS */
 .todos {
@@ -302,3 +311,7 @@ nav ul a li:hover {
 .delete-confirmation .btns button:first-child {
     background-color: #ff0000;
 }
+
+
+
+
