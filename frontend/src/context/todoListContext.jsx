@@ -10,6 +10,9 @@ const reducer = (state, action) => {
             return { todoList: state.todoList.filter(todo => todo !== action.payload) }
         case "ADD TODO LIST":
             return { todoList: [...state.todoList, action.payload] }
+        case "UPDATE TODO LIST":
+            const temp = state.todoList.filter(todo => todo !== action.payload.targetTodo)
+            return { todoList: [action.payload.updateTodo, ...temp] }
         default:
             return state
     }

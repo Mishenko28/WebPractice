@@ -8,9 +8,7 @@
 a {
     text-decoration: none;
 }
-.errorField {
-    background-color: rgba(255, 0, 0, 0.2);
-}
+
 
 /*NAVBAR*/
 nav {
@@ -20,6 +18,7 @@ nav {
     height: 130px;
     display: flex;
     align-items: center;
+    z-index: 1;
 }
 nav h1 {
     font-family: "Anton", sans-serif;
@@ -175,8 +174,8 @@ nav ul a li:hover {
     padding-inline: 10px;
 }
 .home .create-todo label {
-    margin: 30px 0 10px 0;
-    font-weight: 800;
+    margin: 20px 0 5px 0;
+    font-weight: 700;
 }
 .home .create-todo button {
     margin-top: 20px;
@@ -218,17 +217,22 @@ nav ul a li:hover {
 }
 .todos .todo div {
     margin: 5px 0 5px 5px;
+    display: flex;
+    flex-direction: column;
 }
 .todos .todo div:first-child {
-    width: 300px;
-    margin-right: 20px;
     flex-grow: 1;
 }
 .todos .todo div:nth-child(2) {
-    width: 120px;
+    min-width: 120px;
 }
 .todos .todo div:nth-child(3) {
-    width: 100px;
+    min-width: 100px;
+}
+.todos .todo div:nth-child(2) h3, .todos .todo div:nth-child(3) h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .todos .todo div:nth-child(4) {
     display: flex;
@@ -246,26 +250,33 @@ nav ul a li:hover {
     color: rgb(218, 56, 56);
 }
 .todos .todo div h1 {
-    font-size: 20px;
+    font-size: 24px;
     color: hsl(120, 70%, 44%);
+}
+.todos .todo div h1:first-child {
+    display: flex;
+}
+.todos .todo div h1 h5 {
+    font-size: 22px;
+    color: #717171;
+    margin-left: 10px;
 }
 .todos .todo div h3 {
     font-size: 14px;
-}
-.todos .todo div:first-child h3 {
     background-color: #c6cec7;
     flex-grow: 1;
     border-radius: 5px;
-    padding-left: 5px;
-}
-.todos .todo div:first-child {
-    display: flex;
-    flex-direction: column;
+    padding: 8px;
 }
 .todos h2 {
     font-size: 40px;
     margin-block: 20px;
     color: #F2F1EB;
+}
+.todos .todo h4 {
+    font-size: 20px;
+    align-self: center;
+    margin: auto;
 }
 
 /* DELETE CONFIRMATION COMPONENT */
@@ -279,6 +290,7 @@ nav ul a li:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 }
 .delete-confirmation {
     background-color: #ffffff;
@@ -293,6 +305,8 @@ nav ul a li:hover {
 .delete-confirmation h1 {
     font-size: 24px;
     font-family: "Poppins", sans-serif;
+    text-align: center;
+    margin-inline: 20px;
 }
 .delete-confirmation .btns {
     width: 250px;
@@ -311,7 +325,77 @@ nav ul a li:hover {
 .delete-confirmation .btns button:first-child {
     background-color: #ff0000;
 }
+.delete-confirmation h1 span {
+    color: #ff0000;
+}
 
-
-
-
+/* EDIT TODO COMPONENT */
+.edit-todo-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.edit-todo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: sans-serif;
+    width: 500px;
+    color: #3c9271;
+    background-color: #fff;
+    border-radius: 20px;
+}
+.edit-todo input {
+    border: 2px solid #3c9271;
+    height: 45px;
+    width: 350px;
+    border-radius: 25px;
+    font-size: 20px;
+    padding-inline: 10px;
+    align-self: center;
+}
+.edit-todo label {
+    margin: 30px 0 10px 70px;
+    font-weight: 800;
+}
+.edit-todo h1 {
+    margin-left: 60px;
+    display: flex;
+    align-items: center;
+}
+.edit-todo h1 h2 {
+    color: #717171;
+    margin-left: 20px;
+}
+.edit-todo .btns button {
+    height: 50px;
+    width: 120px;
+    border-radius: 25px;
+    background-color: #3c9271;
+    cursor: pointer;
+    border: 0;
+    font-size: 20px;
+    color: #F2F1EB;
+}
+.edit-todo .btns button:last-child {
+    background-color: #ff0000;
+}
+.edit-todo .btns {
+    align-self: center;
+    margin-block: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 370px;
+}
+.edit-todo .btns button:first-child:hover {
+    color: #3c9271;
+    background-color: #F2F1EB;
+    border: 2px solid #3c9271;
+}
