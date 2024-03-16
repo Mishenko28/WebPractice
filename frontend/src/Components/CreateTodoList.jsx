@@ -28,7 +28,7 @@ export default function CreateTodoList() {
             return
         }
         
-        dispatch({type: "ADD TODO LIST", payload: {title, description, time, date}})
+        dispatch({type: "ADD TODO LIST", payload: {title, description: description.trim(), time, date}})
         setTitle("")
         setDescription("")
         setTime("")
@@ -48,8 +48,9 @@ export default function CreateTodoList() {
                     onChange={e => setTitle(e.target.value)}
                 />
                 <label>Description:</label>
-                <input
-                    placeholder='Optional'
+                <textarea
+                    rows= '6'
+                    placeholder='optional'
                     type="text"
                     value={description}
                     onChange={e => setDescription(e.target.value)}

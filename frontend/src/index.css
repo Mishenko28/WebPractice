@@ -27,7 +27,7 @@ nav h1 {
     margin-left: 15px;
 }
 nav h1:hover {
-    text-shadow: 0 0 5px #000;
+    transform: scale(102%);
 }
 nav ul {
     position: absolute;
@@ -153,31 +153,38 @@ nav ul a li:hover {
     border: 2px solid #3c9271;
 }
 
-/* HOME */
-.home {
+/* CREATE TODO */
+.todo-list {
     display: flex;
     padding: 20px;
     gap: 20px;
 }
-.home .create-todo {
+.todo-list .create-todo {
     display: flex;
     flex-direction: column;
     font-family: sans-serif;
     width: 350px;
     color: #3c9271;
 }
-.home .create-todo input {
+.todo-list .create-todo input {
     border: 2px solid #3c9271;
-    height: 45px;
+    height: 35px;
     border-radius: 25px;
     font-size: 20px;
     padding-inline: 10px;
 }
-.home .create-todo label {
+.todo-list .create-todo textarea {
+    border: 2px solid #3c9271;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 5px;
+    resize: none;
+}
+.todo-list .create-todo label {
     margin: 20px 0 5px 0;
     font-weight: 700;
 }
-.home .create-todo button {
+.todo-list .create-todo button {
     margin-top: 20px;
     height: 50px;
     width: 120px;
@@ -189,12 +196,12 @@ nav ul a li:hover {
     font-size: 20px;
     color: #F2F1EB;
 }
-.home .create-todo button:hover {
+.todo-list .create-todo button:hover {
     color: #3c9271;
     background-color: #F2F1EB;
     border: 2px solid #3c9271;
 }
-.home .create-todo .error {
+.todo-list .create-todo .error {
     color: #ff0000;
     border: 2px solid #ff0000;
     margin-top: 20px;
@@ -204,7 +211,7 @@ nav ul a li:hover {
 /* TODOS */
 .todos {
     flex-grow: 1;
-    background-color: #1e554f;
+    background-color: #339085;
     padding: 10px;
     font-family: "Poppins", sans-serif;
 }
@@ -212,16 +219,22 @@ nav ul a li:hover {
     display: flex;
     background-color: #F2F1EB;
     margin-bottom: 15px;
-    height: 120px;
+    height: 162px;
     border-radius: 5px;
+    box-shadow: 0 5px 15px #000000;
 }
 .todos .todo div {
-    margin: 5px 0 5px 5px;
     display: flex;
     flex-direction: column;
+    margin: 0 5px 5px 0;
 }
 .todos .todo div:first-child {
     flex-grow: 1;
+    margin-left: 5px;
+}
+.todos .todo div:first-child h3 {
+    white-space: pre-line;
+    overflow-y: auto;
 }
 .todos .todo div:nth-child(2) {
     min-width: 120px;
@@ -237,14 +250,14 @@ nav ul a li:hover {
 .todos .todo div:nth-child(4) {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    margin: 0;
+    align-items: center;
     width: 40px;
 }
 .todos .todo div i {
     font-size: 30px;
     color: rgb(26, 26, 181);
     cursor: pointer;
+    margin-top: 10px;
 }
 .todos .todo div i:first-child {
     color: rgb(218, 56, 56);
@@ -258,12 +271,13 @@ nav ul a li:hover {
 }
 .todos .todo div h1 h5 {
     font-size: 22px;
-    color: #717171;
+    color: #737373;
     margin-left: 10px;
 }
 .todos .todo div h3 {
     font-size: 14px;
-    background-color: #c6cec7;
+    background-color: #f3f3f3;
+    box-shadow: inset 3px 3px 10px #424242;
     flex-grow: 1;
     border-radius: 5px;
     padding: 8px;
@@ -361,6 +375,15 @@ nav ul a li:hover {
     padding-inline: 10px;
     align-self: center;
 }
+.edit-todo textarea {
+    border: 2px solid #3c9271;
+    width: 350px;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 5px;
+    align-self: center;
+    resize: none;
+}
 .edit-todo label {
     margin: 30px 0 10px 70px;
     font-weight: 800;
@@ -398,4 +421,37 @@ nav ul a li:hover {
     color: #3c9271;
     background-color: #F2F1EB;
     border: 2px solid #3c9271;
+}
+
+/* HOME */
+
+.home {
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.home .todo-list-nav {
+    height: 200px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #339085;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 5px #000000;
+    color: #fff;
+}
+.home .todo-list-nav:hover {
+    transform: scale(103%);
+}
+.home .todo-list-nav i {
+    font-size: 100px;
+}
+.home .todo-list-nav h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    margin-block: 18px 8px;
 }

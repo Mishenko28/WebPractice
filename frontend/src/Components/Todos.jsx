@@ -39,8 +39,8 @@ export default function Todos() {
                         <h3>{todo.time}</h3>
                     </div>
                     <div>
-                        <i className="fa-solid fa-trash" onClick={() => handleDelete(todo)}>Trash</i>
-                        <i className="fa-solid fa-pen-to-square" onClick={() => handleEditTodo(todo)}>Edit</i>
+                        <i className="fa-solid fa-trash" onClick={() => handleDelete(todo)} />
+                        <i className="fa-solid fa-pen-to-square" onClick={() => handleEditTodo(todo)} />
                     </div>
                 </div>
             ))}
