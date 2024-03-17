@@ -1,5 +1,5 @@
 const express = require('express')
-const { mongo, default: mongoose } = require('mongoose')
+const mongoose = require('mongoose')
 const userRoutes = require('./routes/user')
 
 const app = express()
@@ -21,7 +21,7 @@ app.use(express.json())
 
 app.use('/user', userRoutes)
 
-mongoose.connect("mongodb://localhost:27017")
+mongoose.connect("mongodb://localhost:27017/JTWebsite")
     .then(() => {
         app.listen(3000, () => {
             console.log("connected to DataBase and listening to port 3000")

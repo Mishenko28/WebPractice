@@ -31,7 +31,7 @@ export default function Login() {
         }else {
             setError(json.error)
         }
-
+        
         setIsLoading(false)
     }
 
@@ -42,12 +42,14 @@ export default function Login() {
                 <label >Username:</label>
                 <input
                     type="email"
+                    autoComplete="current-password"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
                 <label >Password:</label>
                 <input
                     type="password"
+                    autoComplete="current-password"
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                 />
