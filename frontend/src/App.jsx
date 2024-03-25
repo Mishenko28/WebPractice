@@ -5,6 +5,7 @@ import Home from "./pages/Home"
 import Signup from "./pages/Signup"
 import Login from "./pages/Login"
 import TodoList from './pages/TodoList'
+import Test from './pages/Test'
 
 export default function App() {
   const { state } = useUserContext()
@@ -29,6 +30,10 @@ export default function App() {
         <Route
           path="/todo-list"
           element={<TodoList />}
+        />
+        <Route
+          path="/test"
+          element={<Test />}
         />
       </Routes>
     </>

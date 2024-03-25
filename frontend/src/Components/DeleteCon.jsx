@@ -1,16 +1,27 @@
 import { useState } from 'react'
 import { useTodoListContext } from '../hooks/useTodoListContext'
+import { useUserContext } from '../hooks/useUserContext'
 import 'animate.css'
 
 export default function DeleteCon({ targetTodo, setDeleteConTog }) {
     const [animation, setAnimation] = useState("animate__bounceIn animate__faster")
     const { dispatch } = useTodoListContext()
+    const { state } = useUserContext()
 
     const handleDeleteTodoList = () => {
         setAnimation("animate__bounceOut animate__faster")
-        setTimeout(() => {
+        setTimeout( async () => {
+            const response = await fetch('http://localhost:3000/todoList/' + targetTodo._id, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + state.user.token
+            }
+        })
+            const json = await response.json()
+            
             setDeleteConTog(false)
-            dispatch({type: "DELETE TODO LIST", payload: targetTodo})
+            dispatch({type: "DELETE TODO LIST", payload: json})
         }, 400)
     }
 

@@ -4,7 +4,7 @@ import { useUserContext } from '../hooks/useUserContext'
 export default function Signup() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [error, setError] = useState(null)
+    const [error, setError] = useState("")
     const [isLoading, setIsLoading] = useState(false)
     const { dispatch } = useUserContext()
 
@@ -12,7 +12,7 @@ export default function Signup() {
         e.preventDefault()
 
         setIsLoading(true)
-        setError(null)
+        setError("")
 
         const response = await fetch('http://localhost:3000/user/signup', {
             method: 'POST',

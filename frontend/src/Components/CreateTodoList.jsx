@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useTodoListContext } from '../hooks/useTodoListContext'
+import { useUserContext } from '../hooks/useUserContext'
 
 export default function CreateTodoList() {    
     const [title, setTitle] = useState("")
@@ -8,9 +9,11 @@ export default function CreateTodoList() {
     const [date, setDate] = useState("")
     const [error, setError] = useState("")
     const [emptyFields, setEmptyFields] = useState([])
-    const { dispatch  } = useTodoListContext()
 
-    const handleCreateTodoList = (e) => {
+    const { dispatch  } = useTodoListContext()
+    const { state } = useUserContext()
+
+    const handleCreateTodoList = async (e) => {
         e.preventDefault()
         if (!title || !time || !date) {
             setEmptyFields([])
@@ -28,7 +31,19 @@ export default function CreateTodoList() {
             return
         }
         
-        dispatch({type: "ADD TODO LIST", payload: {title, description: description.trim(), time, date}})
+        const response = await fetch('http://localhost:3000/todoList', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + state.user.token
+            },
+            body: JSON.stringify({title, description: description.trim(), time, date})
+        })
+
+        const json = await response.json()
+
+
+        dispatch({type: "ADD TODO LIST", payload: json})
         setTitle("")
         setDescription("")
         setTime("")

@@ -29,13 +29,13 @@ nav h1 {
 nav h1:hover {
     transform: scale(102%);
 }
-nav ul {
+nav .navs {
     position: absolute;
-    right: 50px;
+    right: 100px;
     display: flex;
     gap: 40px;
 }
-nav ul li {
+nav .navs li {
     list-style: none;
     width: 120px;
     height: 45px;
@@ -45,22 +45,64 @@ nav ul li {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-}
-nav ul a li {
     color: #F2F1EB;
     font-family: sans-serif;
     font-weight: 600;
     font-size: 20px;
 }
-nav ul a:last-child li {
+nav .navs a:last-child li {
     background-color: #254154;
 }
-nav ul a li:hover {
+nav .navs a li:hover {
     background-color: #3c9271;
+}
+nav .user {
+    position: absolute;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #F2F1EB;
+    cursor: pointer;
+}
+nav .user:hover {
+    background-color: #34a0cf;
+}
+nav div i {
+    font-size: 25px;
+    color: #F2F1EB;
 }
 .navbar-block {
     height: 130px;
     background-color: #3c9271;
+}
+
+/* USER SETTINGS */
+nav .user-settings {
+    position: absolute;
+    right: 20px;
+    bottom: -250px;
+    width: 300px;
+    height: 250px;
+    list-style: none;
+    background: #5b5f66;
+    display: flex;
+    flex-direction: column;
+}
+nav .user-settings li {
+    border: 1px solid;
+    color: #cfc8c8;
+    font-size: 16px;
+    margin: 15px 15px 0 15px;
+    padding: 10px;
+    font-family: 'Poppins';
+}
+nav .user-settings li:hover {
+    background-color: #cfc8c8;
+    color: #5b5f66;
 }
 
 /* SIGNUP */
@@ -276,7 +318,7 @@ nav ul a li:hover {
 .todos .todo div h3 {
     font-size: 14px;
     background-color: #f3f3f3;
-    box-shadow: inset 3px 3px 10px #424242;
+    box-shadow: inset 4px 3px 10px #75b8c7;
     flex-grow: 1;
     border-radius: 5px;
     padding: 8px;
@@ -431,26 +473,49 @@ nav ul a li:hover {
     justify-content: space-evenly;
     align-items: center;
 }
-.home .todo-list-nav {
+.home .default-style {
     height: 200px;
     width: 280px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #339085;
     border-radius: 30px;
     cursor: pointer;
     box-shadow: 0 0 5px #000000;
     color: #fff;
 }
-.home .todo-list-nav:hover {
+.home .default-style:hover {
     transform: scale(103%);
 }
-.home .todo-list-nav i {
+.home .default-style i {
     font-size: 100px;
 }
-.home .todo-list-nav h1 {
+.home .default-style h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
     margin-block: 18px 8px;
+}
+.home .todo-list-nav {
+    background-color: #339085;
+}
+.home .test-nav {
+    background-color: #3e689a;
+}
+
+
+
+/* TEST */
+.test button {
+    font-size: 30px;
+    background-color: #339085;
+    width: 100%;
+}
+.test ul {
+    background-color: #5b5f66;
+}
+.test ul li {
+    font-size: 30px;
+}
+.test {
+    width: 300px;
 }

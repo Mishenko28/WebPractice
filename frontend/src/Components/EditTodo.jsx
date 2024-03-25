@@ -1,6 +1,7 @@
 import 'animate.css'
 import { useState } from 'react'
 import { useTodoListContext } from '../hooks/useTodoListContext'
+import { useUserContext } from '../hooks/useUserContext'
 
 export default function EditTodo({ targetTodo, setEditTodoTog }) {
     const [animation, setAnimation] = useState("animate__bounceIn animate__faster")
@@ -9,6 +10,7 @@ export default function EditTodo({ targetTodo, setEditTodoTog }) {
     const [time, setTime] = useState(targetTodo.time)
     const [date, setDate] = useState(targetTodo.date)
     const { dispatch } = useTodoListContext()
+    const { state } = useUserContext()
 
     const handleCancel = (e) => {
         e.preventDefault()
@@ -18,10 +20,22 @@ export default function EditTodo({ targetTodo, setEditTodoTog }) {
         }, 300)
     }
 
-    const handleEditTodo = (e) => {
+    const handleEditTodo = async (e) => {
         e.preventDefault()
-        dispatch({type: "UPDATE TODO LIST", payload: {targetTodo, updateTodo:{title, description, time, date}}})
-        setEditTodoTog(false)   
+
+        const response = await fetch('http://localhost:3000/todoList/' + targetTodo._id, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + state.user.token
+            },
+            body: JSON.stringify({title, description: description.trim(), time, date})
+        })
+
+        const json = await response.json()
+
+        dispatch({type: "UPDATE TODO LIST", payload: {targetTodo, updateTodo: json}})
+        setEditTodoTog(false)
     }
 
     return (
